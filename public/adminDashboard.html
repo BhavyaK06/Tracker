@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/adminDashboard.css">
+  <script src="js/adminDashboard.js"></script>
+</head>
+
+<body>
+  <nav>
+    <a id="ad">Admin Dashboard</a>
+    <a id="createTaskLink">Create Task</a>
+    <a id="Alltask">Task List</a>
+    <input type="text" id="searchInput" style="width: 25%;" placeholder="Search...">
+    <button type="button" id="searchButton">Search</button>
+    <button id="logoutBtn">Logout</button>
+  </nav>
+  <table id="taskTable">
+    <tr>
+      <th>title</th>
+      <th>description</th>
+      <th>assignedTo</th>
+      <th>submissionDate</th>
+       <th>status</th>
+      <th>comment</th>
+      
+      <th>Actions</th>
+    </tr>
+  </table>
+  <div id="createTaskForm">
+    <form id="taskForm">
+      <label for="Title">title:</label>
+      <input type="text" id="Title" name="Title" required>
+
+      <label for="Description">description:</label>
+      <input type="text" id="Description" name="Description" required>
+
+      <label for="Submission_date">Submission Date</label>
+      <input type="date" id="Submission_date" name="Submission_date" required>
+      <label for="comment">comment:</label>
+      <input type="text" id="comment" name="comment" required>
+
+      <label for="assignedTo">Assigned to:</label>
+      <div id="assignedTo">
+      </div>
+      <button type="button" id="createTaskFormSubmit">Submit</button>
+      <button type="button" id="createTaskFormCancel">Cancel</button>
+    </form>
+  </div>
+
+  <div id="editTaskForm" class="add-form" style="display: none; border: 1px solid black; padding: 10px;">
+    <h2>Update details</h2>
+
+    <input type="hidden" id="editTaskId">
+
+    <input type="text" id="editTaskTitle" placeholder="Title" required>
+    <input type="text" id="editTaskDescription" placeholder="Description" required>
+    <input type="text" id="editTaskAssignedTo" placeholder="Assigned To" required>
+    <input type="date" id="editTaskDueDate" placeholder="Submission date" required>
+    <input type="text" id="editTaskComment" placeholder="Comment" required>
+   
+    
+
+    <button style='margin-right:10px;margin-top: 20px;' id="update1" onclick="updateTask()">Update</button>
+    <button onclick="cancelUpdateTask()">Cancel</button>
+  </div>
+
+</body>
+
+</html>
